@@ -1,0 +1,31 @@
+<nav class="sidebar" >
+    <div class="list-group messages">
+        <!--  VDI HOME -->
+        <div class="nested-menu"> 
+          <a class="list-group-item">
+            <span>
+              <i class="fa fa-caret-down"></i>&nbsp; {{ 'VDI Home' | translate }}</span>
+          </a>
+          <li class="expand"><!-- [class.expand]="showMenu === 'pages'" -->
+            <ul class="submenu">
+              <li>
+                <a href="javascript:void(0)">
+                  <span><i class="fa fa-dashboard"></i>&nbsp;{{ 'Dashboard' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span><i class="fa fa-bar-chart-o"></i>&nbsp;{{ 'Events' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span><i class="fa fa-gear"></i>&nbsp;{{ 'Virtual Desktop Wizard' | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </div>
+    </div>
+  </nav>
+  

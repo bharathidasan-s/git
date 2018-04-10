@@ -1,0 +1,78 @@
+{
+	"response": {
+		"cc": "0",
+		"lang": "en,es-ar,en-us,es;q=0.5",
+		"productline": "dcm",
+		"product": "1",
+		"oemname": "",
+		"licensed": "0",
+        "storagetype": "2",
+        "comments_storagetype": "1 - Spark, 2 - SSD with JBOD, 3 - SBB Setup with SSD",
+		"licenseportal": "https://www.megarac.com/xms/?page_id=1010",
+		"domain": "storagevdi.local",
+		"eval": "0",
+		"packages": {
+			"name": "server",
+			"version": "ami.snapvdi.server-3.0xxx"
+		},
+		"plugin": [
+			{
+				"id": "vxh",
+				"version": "ami.snapvdi.vxh-1.0.offline.win32",
+				"licensed": "1"
+			},
+			{
+				"id": "dcm",
+				"version": "ami.snapvdi.dcm-1.0.offline.win32",
+				"licensed": "1"
+			},
+			{
+				"id": "scx",
+				"version": "ami.snapvdi.scx-1.0.offline.win32",
+				"licensed": "1"
+			},
+			{
+				"id": "rx",
+				"version": "ami.snapvdi.rx-1.0.offline.win32",
+				"licensed": "1"
+			}
+		],
+		"vueserverlist": {
+			"server": [
+				{
+					"id": "1",
+					"name": "mracxms-9125",
+					"displayname": "manager-1",
+					"http": "",
+					"https": "80",
+					"ip": "127.0.0.1"
+				},
+				{
+					"id": "2",
+					"name": "mracxms-9126",
+					"displayname": "manager-2",
+					"http": "880",
+					"https": "",
+					"ip": "127.0.0.2"
+				},
+				{
+					"id": "3",
+					"name": "mracxms-9127",
+					"displayname": "manager-3",
+					"http": "222",
+					"https": "",
+					"ip": "127.0.0.3"
+				},
+				{
+					"id": "4",
+					"name": "mracxms-9128",
+					"displayname": "manager-4",
+					"http": "",
+					"https": "1011",
+					"ip": "127.0.0.4"
+				}
+			],
+			"currentid": "1"
+		}
+	}
+}

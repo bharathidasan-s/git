@@ -1,0 +1,308 @@
+<!-- <mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="over">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="toggleSideMenu(drawer)">
+     <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+  </div>
+
+</mat-drawer-container> -->
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav class="example-sidenav" position="end">
+    <nav class="sidebar">
+      <div class="list-group">
+        <!--  VDI HOME -->
+        <div class="nested-menu">
+          <a class="list-group-item" (click)="addExpandClass('pages')">
+            <span>
+              <i class="fa fa-caret-down"></i>&nbsp; {{ 'VDI Home' | translate }}</span>
+          </a>
+          <li class="expand">
+            <!-- [class.expand]="showMenu === 'pages'" -->
+            <ul class="submenu">
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-dashboard"></i>&nbsp;{{ 'Dashboard' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-bar-chart-o"></i>&nbsp;{{ 'Events' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-gear"></i>&nbsp;{{ 'Virtual Desktop Wizard' | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </div>
+        <!--  VDI Explorer -->
+        <div class="nested-menu">
+          <a class="list-group-item" (click)="addExpandClass('pages')">
+            <span>
+              <i class="fa fa-caret-down"></i>&nbsp; {{ 'VDI Explorer' | translate }}</span>
+          </a>
+          <li class="expand">
+            <!-- [class.expand]="showMenu === 'pages'" -->
+            <ul class="submenu">
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-desktop"></i>&nbsp;{{ 'Desktop Explorer' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-users"></i>&nbsp;{{ 'User Sessions' | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </div>
+        <!--  Stroage Explorer -->
+        <div class="nested-menu">
+          <a class="list-group-item" (click)="addExpandClass('pages')">
+            <span>
+              <i class="fa fa-caret-down"></i>&nbsp; {{ 'Stroage Explorer' | translate }}</span>
+          </a>
+          <li class="expand">
+            <!-- [class.expand]="showMenu === 'pages'" -->
+            <ul class="submenu">
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-hdd"></i>&nbsp;{{ 'Stroage Summary' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'Server Disks' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'Enclosure Properties' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-hdd"></i>&nbsp;{{ 'Physical Disks' | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </div>
+        <!--  Client Explorer -->
+        <div class="nested-menu">
+          <a class="list-group-item" (click)="addExpandClass('pages')">
+            <span>
+              <i class="fa fa-caret-down"></i>&nbsp; {{ 'Client Explorer' | translate }}</span>
+          </a>
+          <li class="expand">
+            <!-- [class.expand]="showMenu === 'pages'" -->
+            <ul class="submenu">
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-hdd"></i>&nbsp;{{ 'Client Explorer' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'Firmware Deployment' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'Settings Deployment' | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </div>
+        <!--  Failover -->
+        <div class="nested-menu">
+          <a class="list-group-item" (click)="addExpandClass('pages')">
+            <span>
+              <i class="fa fa-caret-down"></i>&nbsp; {{ 'Failover' | translate }}</span>
+          </a>
+          <li class="expand">
+            <!-- [class.expand]="showMenu === 'pages'" -->
+            <ul class="submenu">
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-hdd"></i>&nbsp;{{ 'Clustered Node Status' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'Clustered Network Status' | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </div>
+        <!--  Template Management -->
+        <div class="nested-menu">
+          <a class="list-group-item" (click)="addExpandClass('pages')">
+            <span>
+              <i class="fa fa-caret-down"></i>&nbsp; {{ 'Template Management' | translate }}</span>
+          </a>
+          <li class="expand">
+            <!-- [class.expand]="showMenu === 'pages'" -->
+            <ul class="submenu">
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-hdd"></i>&nbsp;{{ 'Global VM Templates' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'Hardware Profiles' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'OS Profiles' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'OS ISOs' | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </div>
+        <!--  Software Provisioning -->
+        <div class="nested-menu">
+          <a class="list-group-item" (click)="addExpandClass('pages')">
+            <span>
+              <i class="fa fa-caret-down"></i>&nbsp; {{ 'Software Provisioning' | translate }}</span>
+          </a>
+          <li class="expand">
+            <!-- [class.expand]="showMenu === 'pages'" -->
+            <ul class="submenu">
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-hdd"></i>&nbsp;{{ 'Provisioning Summary' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'Software Licensing' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'Software Packages' | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </div>
+        <!--  Configuration -->
+        <div class="nested-menu">
+          <a class="list-group-item" (click)="addExpandClass('pages')">
+            <span>
+              <i class="fa fa-caret-down"></i>&nbsp; {{ 'Configuration' | translate }}</span>
+          </a>
+          <li class="expand">
+            <!-- [class.expand]="showMenu === 'pages'" -->
+            <ul class="submenu">
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-hdd"></i>&nbsp;{{ 'Setup Alerting' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'Client Policy Editor' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'User and POlicy Assignments' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'OS Licensing' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'RDS Licensing' | translate }}</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>
+                    <i class="fa fa-server"></i>&nbsp;{{ 'SVM Licensing' | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </div>
+      </div>
+    </nav>
+  </mat-sidenav>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="toggleSideMenu(sidenav)">
+      Open sidenav
+    </button>
+  </div>
+
+</mat-sidenav-container>
+<!-- 
+<mat-sidenav-container>
+
+  <mat-sidenav #right position="start">
+     Start Sidenav.
+  </mat-sidenav>
+
+  <mat-sidenav #left position="end">
+     End Sidenav.
+  </mat-sidenav>
+
+<div>
+  <button mat-button (click)="right.open()">right</button>
+  <button mat-button (click)="left.open()">left</button>
+</div>
+
+</mat-sidenav-container> -->
