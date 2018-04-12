@@ -1,12 +1,14 @@
 import { Injectable, APP_INITIALIZER } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
-import { HttpprotocolService } from './../../com/ami/classes/httpprotocol.service';
-import XMSSample from './../../com/ami/projects/xms/XMSSample';
+import { HttpprotocolService } from './httpprotocol.service';
+import { XmsutilsService } from './xmsutils.service';
+import { XmsconstantsService } from './xmsconstants.service';
 
 @Injectable()
 export class AppLoadService {
 
-  constructor(private _http: HttpprotocolService) { }
+  constructor(private _http: HttpprotocolService,private utils:XmsutilsService,
+  private xmsconst:XmsconstantsService) { }
 
   initializeApp(): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -28,8 +30,8 @@ export class AppLoadService {
         console.log("this.resp == ", data["response"]);
         console.log ("response.cc == ",Number(data["response"].cc));
         var cc:number = Number(data["response"].cc);
-        // console.log("XMSError.checkResponseOK(cc,base) == ",XMSError.logout);
-        console.log("XMSError.checkResponseOK(cc,base) == ",XMSSample.doSomething("yahooooo"));
+        console.log("XMSError.checkResponseOK(cc,base) == ",this.utils.foo);
+        console.log("XMSConstants.DEVTYPE_XMSSTARTUP == ",this.xmsconst.XMIT_DATABASE_ERROR);
         /* if(XMSError.checkResponseOK(cc,"base")){
           console.log("**************SUCCESS********** ");
         } */

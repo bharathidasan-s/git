@@ -9,10 +9,15 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
-import { HttpprotocolService } from './com/ami/classes/httpprotocol.service';
+import { HttpprotocolService } from './shared/services/httpprotocol.service';
 import { MaterialModule } from './material.module';//used to import angular material
+//service import
 import { SidebarService } from './shared/services/sidebar.service';
 import { AppLoadService } from './shared/services/app-load.service';
+import { XmsutilsService } from './shared/services/xmsutils.service';
+import { XmsconstantsService } from './shared/services/xmsconstants.service';
+
+
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
     // for development
@@ -42,6 +47,7 @@ export function get_info(_appService:AppLoadService) {
     declarations: [AppComponent],
     providers: [
         AuthGuard,HttpprotocolService,SidebarService,
+        XmsutilsService,XmsconstantsService,
         AppLoadService,
         {provide:APP_INITIALIZER, useFactory:get_info, deps:[AppLoadService], multi:true}
     ],

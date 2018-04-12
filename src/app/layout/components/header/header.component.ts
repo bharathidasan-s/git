@@ -3,7 +3,6 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MaterialModule } from '../../../material.module';
 import { SidebarService } from '../../../shared/services/sidebar.service';
-import { HttpprotocolService } from '../../../com/ami/classes/httpprotocol.service';
 
 @Component({
     selector: 'app-header',
@@ -16,7 +15,7 @@ export class HeaderComponent implements OnInit {
     private resp:any[];
 
     constructor(private translate: TranslateService, public router: Router, private sideService: SidebarService,
-                private _httpService:HttpprotocolService) {
+                ) {
 
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
